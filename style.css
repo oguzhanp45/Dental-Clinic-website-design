@@ -1,0 +1,446 @@
+/* GENEL AYARLAR */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Kutuların boyut hesaplamasını düzeltir */
+}
+:root {
+    --primary-color: #233b61;                                    
+    --accent-color: #3498db;     
+    --highlight-color: #00c721;  
+    --bg-color: #f4f6f7;         
+    --text-dark: #333333;
+    --text-light: #7f8c8d;
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Modern ve okunaklı font */
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* ÜST MENÜ (NAVBAR) TASARIMI */
+.navbar {
+    background-color: #ffffff;
+    height: 80px;
+    display: flex; /* Elemanları yan yana dizer */
+    justify-content: space-between; /* Sağa ve sola yaslar */
+    align-items: center; /* Dikeyde ortalar */
+    padding: 0 5%; /* Kenarlardan boşluk */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Hafif gölge */
+    position: sticky; /* Sayfa kayınca üstte sabit kalır */
+    top: 0;
+    z-index: 1000;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 50px; /* Logo boyutu */
+    margin-right: 15px;
+}
+
+.brand-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #008080; /* Q-Line Logodaki Turkuaz tonu */
+}
+
+.menu-links a {
+    text-decoration: none; /* Alt çizgiyi kaldır */
+    color: #333;
+    margin-left: 20px;
+    font-weight: 500;
+    transition: color 0.3s; /* Renk değişimi yumuşak olsun */
+}
+
+.menu-links a:hover {
+    color: #008080; /* Üzerine gelince turkuaz olsun */
+}
+
+/* HERO ALANI (KAPAK FOTOĞRAFI) */
+.hero-section {
+    width: 100%;
+    height: 500px;
+    /* Klinik fotoğrafını arka plan yapıyoruz */
+    background-image: url('photos/disfoto.jpg'); 
+    background-size: cover; /* Resmi alana sığdır */
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Resmin üzerine koyu bir filtre atarak yazıyı okunur yapıyoruz */
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Yarı saydam siyah */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.hero-overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Buton Tasarımı */
+.cta-button {
+    padding: 15px 30px;
+    background-color: #008080; /* Turkuaz */
+    color: white;
+    text-decoration: none;
+    border-radius: 30px; /* Yuvarlak kenarlar */
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #005f5f; /* Koyu turkuaz */
+}
+
+/* İÇERİK BÖLÜMÜ (Flexbox ile yan yana dizilim) */
+.container {
+    max-width: 1200px;
+    margin: 50px auto; /* Ortala */
+    padding: 0 20px;
+}
+
+.row {
+    display: flex; /* Yan yana getir */
+    align-items: center;
+    gap: 40px; /* Aradaki boşluk */
+    flex-wrap: wrap; /* Mobilde sığmazsa aşağı at */
+}
+
+.col-text {
+    flex: 1; /* Alanın yarısını kapla */
+}
+
+.col-image {
+    flex: 1; /* Alanın diğer yarısını kapla */
+}
+
+.col-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.col-text h2 {
+    color: #008080;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.features {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.feature-item {
+    background: #e0f7fa;
+    padding: 5px 15px;
+    border-radius: 5px;
+    color: #006064;
+    font-size: 0.9rem;
+}
+
+/* FOOTER (ALT KISIM) */
+.footer {
+    background-color: #222; /* Koyu arka plan */
+    color: #fff;
+    padding: 50px 0 20px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footer-box {
+    margin-bottom: 20px;
+    min-width: 200px;
+}
+
+.footer-box img {
+    height: 80px;
+    margin-bottom: 0px;
+    filter: brightness(0) invert(1); /* Logoyu beyaz yapar */
+}
+
+.footer-box h3, .footer-box h4 {
+    margin-bottom: 15px;
+    color: #00ced1;
+}
+
+.footer-box a {
+    color: #ccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* BAŞLIK ALANI VE LOGO YERLEŞİMİ */
+.page-header {
+    margin-bottom: 50px;
+}
+
+/* HTML değiştirmeden CSS ile Logo Ekleme (Ghost Protocol Yöntemi) */
+/* Yorum: HTML yapısını bozmamak için ::before pseudo-element kullandım  */
+.page-header::before {
+    content: ''; /* İçerik boş, sadece görsel olacak */
+    display: block; /* Blok eleman gibi davranıp üstte yer kaplasın */
+    width: 200px;   /* Logonun genişliği */
+    height: 100px;  /* Logonun yüksekliği */
+    margin: 0 auto 20px auto; /* Ortala ve altından boşluk bırak */
+    
+    /* Logo Dosyasının Yolu */
+    background-image: url('photos/logo.png'); 
+    background-size: contain; /* Resmi kutuya sığdır */
+    background-repeat: no-repeat; /* Tekrar etme */
+    background-position: center; /* Ortala */
+}
+
+.page-header h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.page-header p {
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+/* GHOST PROTOCOL GÖREVİ: LAYOUT ÇÖZÜMÜ */
+.pricing-wrapper {
+    display: flex; /* Kartları yan yana diz */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Mobilde alta düşmesi için */
+    align-items: stretch;
+}
+
+/* KART TASARIMI */
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+    border-top: 5px solid var(--primary-color);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* POPÜLER KART */
+.card.popular {
+    border-top: 5px solid var(--highlight-color);
+    transform: scale(1.05);
+    z-index: 1;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: var(--highlight-color);
+    color: white;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border-bottom-left-radius: 10px;
+}
+
+/* KART İÇERİKLERİ */
+.card-header {
+    padding: 30px;
+    background-color: #fafafa;
+    border-bottom: 1px solid #eee;
+}
+
+.card-header h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.price-box {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    color: var(--text-dark);
+}
+
+.currency {
+    font-size: 1.5rem;
+    margin-right: 5px;
+}
+
+.amount {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.period {
+    color: var(--text-light);
+}
+
+.card-body {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.card-body ul {
+    list-style: none;
+    text-align: left;
+}
+
+.card-body ul li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    color: var(--text-dark);
+}
+
+/* Yeşil Onay İkonu */
+.card-body ul li::before {
+    content: '✔';
+    color: #27ae60;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Pasif Özellikler */
+.card-body ul li.disabled {
+    color: #ccc;
+    text-decoration: line-through;
+}
+
+.card-body ul li.disabled::before {
+    content: '✖';
+    color: #ccc;
+}
+
+.card-footer {
+    padding: 30px;
+    background-color: #fafafa;
+}
+
+/* BUTONLAR */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-primary {
+    background-color: var(--highlight-color);
+    border-color: var(--highlight-color);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b4715;
+    border-color: 0b4715;
+}
+
+/* GERİ DÖN LİNKİ */
+.back-link {
+    margin-top: 40px;
+}
+
+.back-link a {
+    text-decoration: none;
+    color: var(--text-light);
+    font-weight: bold;
+}
+
+.back-link a:hover {
+    color: var(--primary-color);
+}
+/* MOBİL UYUMLULUK (RESPONSIVE) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Menüyü alt alta al */
+        height: auto;
+        padding: 15px;
+    }
+
+    .menu-links {
+        margin-top: 15px;
+    }
+    
+    .hero-overlay h1 {
+        font-size: 2rem; /* Başlığı küçült */
+    }
+
+    .row {
+        flex-direction: column; /* İçeriği alt alta diz */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
