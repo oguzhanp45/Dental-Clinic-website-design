@@ -225,7 +225,6 @@ body {
 }
 
 /* HTML değiştirmeden CSS ile Logo Ekleme (Ghost Protocol Yöntemi) */
-/* Yorum: HTML yapısını bozmamak için ::before pseudo-element kullandım  */
 .page-header::before {
     content: ''; /* İçerik boş, sadece görsel olacak */
     display: block; /* Blok eleman gibi davranıp üstte yer kaplasın */
@@ -251,7 +250,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* GHOST PROTOCOL GÖREVİ: LAYOUT ÇÖZÜMÜ */
+/* LAYOUT ÇÖZÜMÜ */
 .pricing-wrapper {
     display: flex; /* Kartları yan yana diz */
     justify-content: center;
@@ -442,5 +441,190 @@ body {
     .footer-content {
         flex-direction: column;
         align-items: center;
+    }
+}
+
+/* =========================================================
+   TASK 3: EKİBİMİZ SAYFASI CSS (Buradan sonrası yeni eklenenler)
+   ========================================================= */
+
+/* Vizyon Yazısı Alanı */
+.vision-box {
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-left: 5px solid var(--primary-color); /* Sol tarafa kurumsal çizgi */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.vision-box p {
+    font-size: 1.1rem;
+    color: #555;
+    font-style: italic;
+}
+
+/* Kartları Kapsayan Alan (Grid Yapısı) */
+.team-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+/* -----------------------------------------
+   STANDART PERSONEL KARTI (SLIDE UP EFEKTİ)
+   ----------------------------------------- */
+.team-card {
+    background: #fff;
+    width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Animasyon geçiş süresi */
+    border-bottom: 4px solid transparent;
+}
+
+.team-card:hover {
+    transform: translateY(-15px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    border-bottom: 4px solid var(--accent-color);
+}
+
+.card-image-box {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Resmi kutuya sığdırır */
+    object-position: top center;
+}
+
+.team-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.team-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.team-info .role {
+    color: var(--accent-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.team-info .desc {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* -----------------------------------------
+   ÖZEL KART: LEAD DEVELOPER (FLIP/DÖNME EFEKTİ)
+   ----------------------------------------- */
+
+/* Flip Kart Konteyneri */
+.flip-card-container {
+    background-color: transparent;
+    width: 280px;
+    height: 480px; /* Diğer kartların toplam yüksekliğine yakın bir değer */
+    perspective: 1000px; /* 3D derinlik hissi verir */
+}
+
+/* İç Kapsayıcı: Ön ve Arka yüzü tutar */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s; /* Dönüş hızı */
+    transform-style: preserve-3d; /* 3D dönüşü korur */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-radius: 15px;
+}
+
+.flip-card-container:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Ön ve Arka Yüz Ortak Ayarları */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Arka yüzü dönerken gizle */
+    backface-visibility: hidden;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ön Yüz Tasarımı */
+.flip-card-front {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Teknik Avatar Görseli */
+.tech-avatar {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, #1e2a3a 0%, #233b61 100%); /* Koyu lacivert teknik arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00c721; /* Matrix yeşili kod rengi */
+    font-size: 4rem;
+    border-bottom: 5px solid var(--highlight-color);
+}
+
+.team-info .role.highlight {
+    color: var(--highlight-color); /* Daha canlı bir yeşil */
+    font-weight: 700;
+}
+
+/* ARKA YÜZ (SERTİFİKA FOTOĞRAFI İÇİN GÜNCELLENMİŞ VERSİYON) */
+.flip-card-back {
+    background-color: #f4f6f7; /* Resim tam doldurmazsa arka plan rengi */
+    transform: rotateY(180deg); /* Başlangıçta arkada olduğu için dönük */
+    /* Resmi kenarlardan biraz içeri alarak doğal bir çerçeve etkisi yaratıyoruz */
+    padding: 5px; 
+    border: 5px solid var(--primary-color); /* Dış çerçeve */
+    overflow: hidden;
+    /* İçeriği ortala */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flip-card-back img {
+    width: 100%;
+    height: 100%;
+    /* ÖNEMLİ DEĞİŞİKLİK: 'contain' ile resmin tamamı görünür, kesilmez */
+    object-fit: contain; 
+    border-radius: 5px; /* Resmin köşelerini hafif yuvarla */
+}
+
+/* Mobil Uyumluluk İçin Ek */
+@media (max-width: 768px) {
+    .team-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .flip-card-container {
+        margin-bottom: 20px;
     }
 }
