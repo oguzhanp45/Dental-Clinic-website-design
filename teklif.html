@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q-Line | Maliyet Hesaplama</title>
+    <link rel="shortcut icon" href="photos/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="photos/logo.png" alt="Q-Line Logo" class="nav-logo">
+            <span class="brand-name">Q-Line Diş Polikliniği</span>
+        </div>
+        <div class="menu-links">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="team.html">Ekibimiz</a>
+            <a href="task2.html">Fiyatlar</a>
+            <a href="teklif.html" class="active">Hesapla</a>
+            <a href="#iletisim">Bize Ulaşın</a>
+        </div>
+    </div>
+
+    <div class="main-container">
+
+        <header class="page-header">
+            <h1>Maliyet Hesaplama Aracı</h1>
+            <p>Kişiselleştirilmiş tedavi planınızı oluşturun ve bütçenizi anında görüntüleyin.</p>
+        </header>
+
+        <div class="calculator-wrapper">
+            <div class="calculator-card">
+                
+                <div class="calc-header">
+                    <h3><i class="fa-solid fa-calculator"></i> Tedavi Planlayıcı</h3>
+                </div>
+
+                <div class="calc-body">
+                    <form id="treatmentForm" onsubmit="event.preventDefault();">
+                        
+                        <div class="form-group">
+                            <label for="servicePackage">Tercih Edilen Hizmet Paketi</label>
+                            <select id="servicePackage" class="form-control">
+                                <option value="0">Seçim Yapınız...</option>
+                                <option value="1500">Temel Bakım (1.500 ₺)</option>
+                                <option value="8000">Estetik Gülüş Paketi (8.000 ₺)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="implantCount">İmplant Tedavisi (Birim: 25.000 ₺)</label>
+                            <select id="implantCount" class="form-control">
+                                <option value="0">İmplant İhtiyacım Yok</option>
+                                <option value="1">1 Adet İmplant</option>
+                                <option value="2">2 Adet İmplant</option>
+                                <option value="3">3 Adet İmplant</option>
+                                <option value="4">4 Adet İmplant</option>
+                                <option value="12">Komple Çene (12 Adet)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fillingCount">Ekstra Dolgu Adedi (Birim: 1.000 ₺)</label>
+                            <input type="number" id="fillingCount" class="form-control" min="0" placeholder="0">
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="mouthShower" value="1500">
+                                <label for="mouthShower">Profesyonel Ağız Duşu (+1.500 ₺)</label>
+                            </div>
+                            
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="emergencySupport" value="500">
+                                <label for="emergencySupport">7/24 VIP Destek Paketi (+500 ₺)</label>
+                            </div>
+                        </div>
+
+                        <button type="button" id="btnCalculate" class="btn-calc">HESAPLA</button>
+
+                    </form>
+                </div>
+
+                <div class="calc-footer" id="resultArea" style="display: none;">
+                    <h4>Öngörülen İşlem Tutarı</h4>
+                    <div class="total-price">
+                        <span id="displayTotal">0</span> <span class="currency">TL</span>
+                    </div>
+                    <p class="disclaimer">* Belirtilen tutar bilgilendirme amaçlıdır. Kesin fiyat hekim muayenesi sonrası netleşecektir.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="index.html">← Ana Sayfaya Dön</a>
+        </div>
+
+    </div>
+
+    <div id="iletisim" class="footer">
+        <div class="footer-content">
+            <div class="footer-box">
+                <img src="photos/logo.png" alt="Q-Line Logo Küçük">
+                <h3>Q-Line Özel Diş Polikliniği</h3>
+            </div>
+            
+            <div class="footer-box">
+                <h4>Bize Ulaşın</h4>
+                <p>Telefon: +90 (212) 555 00 00</p>
+                <p>E-Posta: info@qline-dis.com</p>
+                <p>Adres: Teknoloji Cad. No:10 Manisa/Akhisar</p>
+            </div>
+
+            <div class="footer-box">
+                <h4>Hızlı Menü</h4>
+                <a href="index.html">Ana Sayfa</a>
+                <a href="team.html">Ekibimiz</a>
+                <a href="task2.html">Fiyat Listesi</a>
+                <a href="teklif.html">Maliyet Hesapla</a>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2026 Q-Line Diş Polikliniği. Tüm Hakları Saklıdır.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
