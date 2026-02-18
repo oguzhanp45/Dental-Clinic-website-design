@@ -40,7 +40,7 @@ body.dark-mode {
 }
 
 /* =========================================
-   2. ORİJİNAL CSS (Sadece Renkler Değişkene Bağlandı)
+   2. ORİJİNAL CSS 
    ========================================= */
 
 * {
@@ -866,7 +866,7 @@ body.dark-mode .feature-item {
 }
 
 /* =================================================================
-   MOBİL UYUMLULUK (BURASI TAMAMEN GÜNCELLENDİ)
+   MOBİL UYUMLULUK 
    ================================================================= */
 @media (max-width: 768px) {
     
@@ -883,28 +883,33 @@ body.dark-mode .feature-item {
     /* MENÜ LİNKLERİ (2 SÜTUNLU SABİT TABLO) */
     .menu-links {
         display: grid;
-        grid-template-columns: 1fr 1fr; /* Ekranı tam ortadan 2'ye böl */
-        gap: 8px; /* Kutular arası boşluk */
+        grid-template-columns: repeat(3, 1fr); /* Ekranı 3'e böl (2 satıra düşer) */
+        gap: 6px; /* Boşlukları azalttık */
         width: 100%;
         margin-top: 5px;
+        padding-bottom: 45px; /* Alt araçlar için yer */
     }
 
     /* Link Kutuları */
     .menu-links a {
         margin: 0;
         text-align: center;
-        padding: 10px 5px;
+        padding: 0 2px; /* Yanlardan boşluğu kıstık */
         background-color: var(--bg-body);
         border: 1px solid var(--border-color);
-        border-radius: 8px;
-        font-size: 0.85rem; /* Yazı boyutu */
-        white-space: nowrap; /* Asla alt satıra geçmesin */
-        overflow: hidden;    /* Taşarsa gizle */
-        text-overflow: ellipsis; /* ... koy */
+        border-radius: 6px; /* Biraz daha köşeli, modern */
+        
+        font-size: 0.75rem; /* Yazıyı küçülttük ki "Kur Çevirici" sığsın */
+        font-weight: 600;
+        
+        white-space: nowrap; /* Alt satıra geçmesin */
+        overflow: hidden;
+        text-overflow: ellipsis; /* Sığmazsa ... koysun */
+        
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 40px; /* SABİT YÜKSEKLİK (Zıplamayı Önler) */
+        height: 35px; /* Yüksekliği azalttık (40px -> 35px) */
     }
 
     /* Aktif Link Rengi */
@@ -944,4 +949,5 @@ body.dark-mode .feature-item {
     .footer-content { flex-direction: column; }
     .btn-cta { width: 100%; justify-content: center; }
 }
+
 
