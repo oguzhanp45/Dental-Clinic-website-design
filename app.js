@@ -103,4 +103,33 @@ function updateResultUI(amount) {
         resultArea.style.animation = 'fadeIn 0.5s ease-in-out';
     }
     resultArea.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
 }
+/* =========================================
+   OTOMATİK AKTİF MENÜ İŞARETLEYİCİ
+   ========================================= */
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Tarayıcıdaki dosya adını al (örn: team.html)
+    // Eğer adres sadece "/" ise 'index.html' kabul et.
+    let currentPage = window.location.pathname.split("/").pop();
+    if (currentPage === "") currentPage = "index.html";
+
+    // 2. Menüdeki tüm linkleri gez
+    const menuLinks = document.querySelectorAll('.menu-links a');
+
+    menuLinks.forEach(link => {
+        // Linkin gittiği adresi al (örn: pages/team.html)
+        const linkHref = link.getAttribute('href');
+        
+        // Linkin dosya adını ayıkla (team.html)
+        const linkPage = linkHref.split("/").pop();
+
+        // Önce temizlik yap
+        link.classList.remove('active');
+
+        // Eğer sayfa adları eşleşiyorsa boya
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
+});
