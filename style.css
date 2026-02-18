@@ -870,71 +870,78 @@ body.dark-mode .feature-item {
    ================================================================= */
 @media (max-width: 768px) {
     
-    /* 1. NAVBAR KUTUSU */
     .navbar {
-        flex-direction: column; /* Logo üstte, linkler altta olsun */
+        flex-direction: column;
         height: auto;
-        padding: 15px;
+        padding: 10px;
     }
 
     .logo-container {
-        margin-bottom: 15px; /* Logo ile linkler arasına az boşluk */
+        margin-bottom: 10px;
     }
 
-    /* 2. LİNKLERİN KUTUSU (YAN YANA VE KAYGAN) */
+    /* MENÜ LİNKLERİ (2 SÜTUNLU SABİT TABLO) */
     .menu-links {
-        display: flex;
-        flex-direction: row;    /* Yan yana diz */
-        flex-wrap: wrap;        /* Sığmayan aşağı kaysın */
-        justify-content: center;/* Ortala */
-        gap: 10px;              /* Linkler arası boşluk */
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* Ekranı tam ortadan 2'ye böl */
+        gap: 8px; /* Kutular arası boşluk */
         width: 100%;
         margin-top: 5px;
     }
 
-    /* 3. LİNKLER (BUTTON GÖRÜNÜMÜ) */
+    /* Link Kutuları */
     .menu-links a {
         margin: 0;
-        font-size: 0.9rem;      /* Yazıları biraz küçült sığsın */
-        padding: 8px 12px;      /* Buton gibi görünsün */
-        border: 1px solid var(--border-color); /* Çerçeve ekle */
-        border-radius: 20px;    /* Yuvarlat */
-        background-color: var(--bg-body); /* Arka plan rengi */
-        white-space: nowrap;    /* Yazı kırılmasın tek satır kalsın */
+        text-align: center;
+        padding: 10px 5px;
+        background-color: var(--bg-body);
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 0.85rem; /* Yazı boyutu */
+        white-space: nowrap; /* Asla alt satıra geçmesin */
+        overflow: hidden;    /* Taşarsa gizle */
+        text-overflow: ellipsis; /* ... koy */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px; /* SABİT YÜKSEKLİK (Zıplamayı Önler) */
     }
-    
-    /* Aktif sayfa linkini belli et */
+
+    /* Aktif Link Rengi */
     .menu-links a.active {
         background-color: var(--primary-color);
         color: white;
         border-color: var(--primary-color);
     }
 
-    /* 4. DİL VE TEMA BUTONLARI */
+    /* ARAÇLAR (Dil ve Tema - En Alta Tam Genişlik) */
+    /* Bunları Grid'in dışına taşıyıp en alta alıyoruz */
+    .menu-links {
+        position: relative;
+        padding-bottom: 50px; /* Alt araçlar için yer aç */
+    }
+
+    /* Dil ve Tema Butonlarını En Alta Sabitle */
     .lang-switch-container {
-        margin: 5px 0 0 0 !important;
+        position: absolute;
+        bottom: 0;
+        left: 20%; /* Ortala */
+        margin: 0 !important;
     }
 
     .theme-toggle-btn {
-        margin: 5px 0 0 5px !important;
-        width: 35px;
-        height: 35px;
+        position: absolute;
+        bottom: 5px;
+        right: 20%; /* Ortala */
+        margin: 0 !important;
     }
 
-    /* 5. DİĞER SAYFA DÜZELTMELERİ */
+    /* DİĞER MOBİL AYARLAR */
     .calculator-wrapper { padding: 0; }
     .calculator-card { margin: 10px; }
-    .calc-body, .calc-header { padding: 15px; }
-    .checkbox-item { align-items: flex-start; }
-    .checkbox-item input { margin-top: 3px; }
-    .total-price { font-size: 1.8rem; }
-    .team-wrapper { flex-direction: column; align-items: center; }
-    .flip-card-container { margin-bottom: 20px; }
-    .hero-overlay h1 { font-size: 1.8rem; }
+    .team-wrapper { flex-direction: column; }
     .row { flex-direction: column; }
-    .footer-content { flex-direction: column; align-items: center; }
-    .cta-overlay { flex-direction: column; text-align: center; }
-    .cta-text { margin-bottom: 20px; margin-right: 0; }
-    .cta-text h2 { font-size: 1.5rem; }
+    .footer-content { flex-direction: column; }
     .btn-cta { width: 100%; justify-content: center; }
 }
+
