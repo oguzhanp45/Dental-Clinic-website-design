@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yabancı Hastalar İçin Döviz Kuru ve Tedavi Maliyeti</title>
+    <meta name="description"
+        content="Sağlık turizmi hastalarımız için anlık döviz kurları ile tedavi maliyeti hesaplama. Euro, Dolar ve Sterlin bazında diş tedavisi fiyatları.">
+    <meta name="keywords"
+        content="dental tourism turkey, diş turizmi fiyatları, euro ile diş tedavisi, health tourism turkey">
+
+    <link rel="shortcut icon" href="../photos/logo.png">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../kur.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo-container">
+            <img src="../photos/logo.png" alt="Q-Line Logo" class="nav-logo">
+            <span class="brand-name">Q-Line Diş Polikliniği</span>
+        </div>
+        <div class="menu-links">
+            <a href="../index.html" data-lang="nav_home" class="active">Ana Sayfa</a>
+            <a href="team.html" data-lang="nav_team">Ekibimiz</a>
+            <a href="task2.html" data-lang="nav_price">Fiyatlar</a>
+            <a href="teklif.html" data-lang="nav_calc">Hesapla</a>
+            <a href="kur.html" data-lang="nav_curr">Kur Çevirici</a>
+            <a href="#iletisim" data-lang="nav_contact">Bize Ulaşın</a>
+
+            <div class="lang-switch-container">
+                <button class="lang-btn active" onclick="changeLanguage('tr')" id="btn-tr">TR</button>
+                <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
+            </div>
+
+            <button id="theme-toggle" class="theme-toggle-btn">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-container">
+
+        <header class="page-header">
+            <h1 data-lang="kur_title">Yabancı Hastalar İçin Kur Çevirici</h1>
+            <p data-lang="kur_desc">Anlık döviz kurları ile tedavi maliyetinizi kendi para biriminizde görün.</p>
+        </header>
+
+        <div class="converter-wrapper">
+            <div class="converter-card">
+                <div class="api-status">
+                    <strong data-lang="kur_last_update" style="font-size: 0.9rem;">Son Güncelleme:</strong>
+
+                    <span id="dateDisplay" style="margin-left: 5px;">Yükleniyor...</span>
+
+                    <span class="pulse-dot"></span>
+                </div>
+
+                <div class="input-group">
+                    <label data-lang="kur_lbl_try">Türk Lirası (TL) Tutarı</label>
+                    <input type="number" id="amountTRY" placeholder="Örn: 25000" value="25000">
+                </div>
+
+                <div class="exchange-icon">
+                    <i class="fa-solid fa-arrow-right-arrow-left fa-rotate-90"></i>
+                </div>
+
+                <div class="result-group">
+                    <div class="currency-row">
+                        <img src="https://flagcdn.com/w40/eu.png" alt="Euro Bayrağı">
+                        <div class="currency-info">
+                            <span class="code">EUR</span>
+                            <span class="value" id="valEUR">--- €</span>
+                        </div>
+                    </div>
+
+                    <div class="currency-row">
+                        <img src="https://flagcdn.com/w40/us.png" alt="ABD Bayrağı">
+                        <div class="currency-info">
+                            <span class="code">USD</span>
+                            <span class="value" id="valUSD">--- $</span>
+                        </div>
+                    </div>
+
+                    <div class="currency-row">
+                        <img src="https://flagcdn.com/w40/gb.png" alt="İngiltere Bayrağı">
+                        <div class="currency-info">
+                            <span class="code">GBP</span>
+                            <span class="value" id="valGBP">--- £</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="api-note" data-lang="kur_note">Veriler <strong>Frankfurter API</strong> üzerinden anlık
+                    çekilmektedir.</p>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="../index.html" class="btn-back">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span data-lang="back_home">Ana Sayfaya Dön</span>
+            </a>
+        </div>
+
+    </div>
+
+    <div id="iletisim" class="footer">
+        <div class="footer-content">
+            <div class="footer-box">
+                <img src="../photos/logo.png" alt="Q-Line Logo Küçük">
+                <h3 data-lang="footer_brand">Q-Line Özel Diş Polikliniği</h3>
+            </div>
+
+            <div class="footer-box">
+                <h4 data-lang="footer_contact_title">Bize Ulaşın</h4>
+                <p>
+                    <strong data-lang="lbl_phone">Telefon:</strong> +90 (212) 555 00 00
+                </p>
+                <p>
+                    <strong data-lang="lbl_email">E-Posta:</strong> info@qline-dis.com
+                </p>
+                <p>
+                    <strong data-lang="lbl_addr">Adres:</strong>
+                    <span data-lang="txt_addr">Teknoloji Cad. No:10 Manisa/Akhisar</span>
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <h4 data-lang="footer_menu_title">Hızlı Menü</h4>
+                <a href="../index.html" data-lang="nav_home">Ana Sayfa</a>
+                <a href="team.html" data-lang="nav_team">Ekibimiz</a>
+                <a href="task2.html" data-lang="footer_nav_price">Fiyat Listesi</a>
+                <a href="teklif.html" data-lang="footer_nav_calc">Maliyet Hesapla</a>
+                <a href="kur.html" data-lang="nav_curr">Kur Çevirici</a>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p data-lang="footer_rights">&copy; 2026 Q-Line Diş Polikliniği. Tüm Hakları Saklıdır.</p>
+        </div>
+    </div>
+
+    <script src="../app.js"></script>
+    <script src="../kur.js"></script>
+    <script src="../lang.js"></script>
+
+</body>
+
+</html>

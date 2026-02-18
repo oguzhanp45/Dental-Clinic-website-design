@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Diş Tedavi Maliyeti Hesapla | Online Teklif Al</title>
+  <meta name="description"
+    content="İmplant, dolgu ve estetik işlemler için tahmini tedavi tutarınızı anında hesaplayın. Kişiye özel tedavi planı ve maliyet tablosu oluşturun.">
+  <meta name="keywords" content="diş maliyet hesaplama, implant hesaplama motoru, diş tedavi ücreti öğrenme">
+
+  <link rel="shortcut icon" href="../photos/logo.png">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="../photos/logo.png" alt="Q-Line Logo" class="nav-logo" />
+      <span class="brand-name">Q-Line Diş Polikliniği</span>
+    </div>
+    <div class="menu-links">
+      <a href="../index.html" data-lang="nav_home" class="active">Ana Sayfa</a>
+      <a href="team.html" data-lang="nav_team">Ekibimiz</a>
+      <a href="task2.html" data-lang="nav_price">Fiyatlar</a>
+      <a href="teklif.html" data-lang="nav_calc">Hesapla</a>
+      <a href="kur.html" data-lang="nav_curr">Kur Çevirici</a>
+      <a href="#iletisim" data-lang="nav_contact">Bize Ulaşın</a>
+
+      <div class="lang-switch-container">
+        <button class="lang-btn active" onclick="changeLanguage('tr')" id="btn-tr">TR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <header class="page-header">
+      <h1 data-lang="calc_title">Maliyet Hesaplama Aracı</h1>
+      <p data-lang="calc_desc">
+        Kişiselleştirilmiş tedavi planınızı oluşturun ve bütçenizi anında
+        görüntüleyin.
+      </p>
+    </header>
+
+    <div class="calculator-wrapper">
+      <div class="calculator-card">
+        <div class="calc-header">
+          <h3><i class="fa-solid fa-calculator"></i><span data-lang="calc_box_title">Tedavi Planlayıcı</span></h3>
+        </div>
+
+        <div class="calc-body">
+          <form id="treatmentForm" onsubmit="event.preventDefault();">
+
+            <div class="form-group">
+              <label for="servicePackage" data-lang="lbl_service">Tercih Edilen Hizmet Paketi</label>
+              <select id="servicePackage" class="form-control">
+                <option value="0" data-lang="opt_def">Seçim Yapınız...</option>
+                <option value="1500" data-lang="opt_basic">Temel Bakım (1.500 ₺)</option>
+                <option value="8000" data-lang="opt_aes">Estetik Gülüş Paketi (8.000 ₺)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="implantCount" data-lang="lbl_imp">İmplant Tedavisi (Birim: 25.000 ₺)</label>
+              <select id="implantCount" class="form-control">
+                <option value="0" data-lang="opt_no_imp">İmplant İhtiyacım Yok</option>
+                <option value="1" data-lang="opt_1_imp">1 Adet İmplant</option>
+                <option value="2" data-lang="opt_2_imp">2 Adet İmplant</option>
+                <option value="3" data-lang="opt_3_imp">3 Adet İmplant</option>
+                <option value="4" data-lang="opt_4_imp">4 Adet İmplant</option>
+                <option value="12" data-lang="opt_12_imp">Komple Çene (12 Adet)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="implantCount" data-lang="lbl_imp">İmplant Tedavisi (Birim: 25.000 ₺)</label>
+              <select id="implantCount" class="form-control">
+                <option value="0" data-lang="opt_no_imp">İmplant İhtiyacım Yok</option>
+                <option value="1" data-lang="opt_1_imp">1 Adet İmplant</option>
+                <option value="2" data-lang="opt_2_imp">2 Adet İmplant</option>
+                <option value="3" data-lang="opt_3_imp">3 Adet İmplant</option>
+                <option value="4" data-lang="opt_4_imp">4 Adet İmplant</option>
+                <option value="12" data-lang="opt_12_imp">Komple Çene (12 Adet)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="fillingCount" data-lang="lbl_fill">Ekstra Dolgu Adedi (Birim: 1.000 ₺)</label>
+              <input type="number" id="fillingCount" class="form-control" min="0" placeholder="0">
+            </div>
+
+            <div class="form-group checkbox-group">
+              <div class="checkbox-item">
+                <input type="checkbox" id="mouthShower" value="1500">
+                <label for="mouthShower" data-lang="lbl_shower">Profesyonel Ağız Duşu (+1.500 ₺)</label>
+              </div>
+
+              <div class="checkbox-item">
+                <input type="checkbox" id="emergencySupport" value="500">
+                <label for="emergencySupport" data-lang="lbl_emerg">7/24 VIP Destek Paketi (+500 ₺)</label>
+              </div>
+            </div>
+
+            <button type="button" id="btnCalculate" class="btn-calc">
+              <span data-lang="btn_calc">HESAPLA</span>
+            </button>
+
+          </form>
+        </div>
+
+        <div class="calc-footer" id="resultArea" style="display: none">
+          <h4 data-lang="res_title">Öngörülen İşlem Tutarı</h4>
+          <div class="total-price">
+            <span id="displayTotal">0</span> <span class="currency">TL</span>
+          </div>
+          <p class="disclaimer" data-lang="res_note">* Belirtilen tutar bilgilendirme amaçlıdır. Kesin fiyat hekim
+            muayenesi sonrası netleşecektir.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../index.html" class="btn-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span data-lang="back_home">Ana Sayfaya Dön</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="iletisim" class="footer">
+    <div class="footer-content">
+      <div class="footer-box">
+        <img src="../photos/logo.png" alt="Q-Line Logo Küçük">
+        <h3 data-lang="footer_brand">Q-Line Özel Diş Polikliniği</h3>
+      </div>
+
+      <div class="footer-box">
+        <h4 data-lang="footer_contact_title">Bize Ulaşın</h4>
+        <p>
+          <strong data-lang="lbl_phone">Telefon:</strong> +90 (212) 555 00 00
+        </p>
+        <p>
+          <strong data-lang="lbl_email">E-Posta:</strong> info@qline-dis.com
+        </p>
+        <p>
+          <strong data-lang="lbl_addr">Adres:</strong>
+          <span data-lang="txt_addr">Teknoloji Cad. No:10 Manisa/Akhisar</span>
+        </p>
+      </div>
+
+      <div class="footer-box">
+        <h4 data-lang="footer_menu_title">Hızlı Menü</h4>
+        <a href="../index.html" data-lang="nav_home">Ana Sayfa</a>
+        <a href="team.html" data-lang="nav_team">Ekibimiz</a>
+        <a href="task2.html" data-lang="footer_nav_price">Fiyat Listesi</a>
+        <a href="teklif.html" data-lang="footer_nav_calc">Maliyet Hesapla</a>
+        <a href="kur.html" data-lang="nav_curr">Kur Çevirici</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p data-lang="footer_rights">&copy; 2026 Q-Line Diş Polikliniği. Tüm Hakları Saklıdır.</p>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="../lang.js"></script>
+</body>
+
+</html>

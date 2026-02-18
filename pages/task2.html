@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="tr">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>2026 Diş Tedavi Fiyat Listesi | Q-Line Polikliniği</title>
+<meta name="description"
+  content="2026 güncel implant fiyatları, diş dolgusu ücretleri ve gülüş tasarımı paketleri. Şeffaf fiyat politikası ve taksit seçenekleri Q-Line'da.">
+<meta name="keywords"
+  content="diş implant fiyatları 2026, diş dolgu fiyatı, diş temizleme ücreti, manisa diş fiyatları">
+
+<link rel="shortcut icon" href="../photos/logo.png">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="logo-container">
+      <img src="../photos/logo.png" alt="Q-Line Logo" class="nav-logo" />
+      <span class="brand-name">Q-Line Diş Polikliniği</span>
+    </div>
+    <div class="menu-links">
+      <a href="../index.html" data-lang="nav_home" class="active">Ana Sayfa</a>
+      <a href="team.html" data-lang="nav_team">Ekibimiz</a>
+      <a href="task2.html" data-lang="nav_price">Fiyatlar</a>
+      <a href="teklif.html" data-lang="nav_calc">Hesapla</a>
+      <a href="kur.html" data-lang="nav_curr">Kur Çevirici</a>
+      <a href="#iletisim" data-lang="nav_contact">Bize Ulaşın</a>
+
+      <div class="lang-switch-container">
+        <button class="lang-btn active" onclick="changeLanguage('tr')" id="btn-tr">TR</button>
+        <button class="lang-btn" onclick="changeLanguage('en')" id="btn-en">EN</button>
+      </div>
+
+      <button id="theme-toggle" class="theme-toggle-btn">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <header class="page-header">
+      <h1 data-lang="price_title">Tedavi Ücretleri</h1>
+      <p data-lang="price_desc">
+        Sağlıklı dişler ve mükemmel bir gülüş için size uygun tedaviyi seçin.
+      </p>
+    </header>
+
+    <div class="pricing-wrapper">
+      <div class="card">
+        <div class="card-header">
+          <h3 data-lang="c1_title">Temel Bakım</h3>
+          <div class="price-box">
+            <span class="currency">₺</span><span class="amount">1500</span>
+            <span class="period" data-lang="c1_per">/seans</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li data-lang="c1_li1">Genel Diş Muayenesi</li>
+            <li data-lang="c2_li2">Panoramik Röntgen</li>
+            <li data-lang="c1_li3">Diş Taşı Temizliği</li>
+            <li class="disabled" data-lang="c1_li4">Diş Beyazlatma Dahil Değil</li>
+            <li class="disabled" data-lang="c1_li5">Dolgu Tedavisi Dahil Değil</li>
+            <li class="disabled" data-lang="c1_li6">İmplant Cerrahisi Yok</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="teklif.html" class="btn" data-lang="c1_btn">Randevu Al</a>
+        </div>
+      </div>
+
+      <div class="card popular">
+        <div class="badge" data-lang="badge_pop">En Çok Tercih Edilen</div>
+        <div class="card-header">
+          <h3 data-lang="c2_title">Estetik Gülüş</h3>
+          <div class="price-box">
+            <span class="currency">₺</span><span class="amount">8000</span>
+            <span class="period" data-lang="c2_per">/paket</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li data-lang="c2_li1">Detaylı Ağız Bakımı</li>
+            <li data-lang="c2_li2">Lazerle Diş Beyazlatma</li>
+            <li data-lang="c2_li3">2 Adet Kompozit Dolgu</li>
+            <li data-lang="c2_li4">Florür Uygulaması</li>
+            <li data-lang="c2_li5">Hassasiyet Giderici Tedavi</li>
+            <li class="disabled" data-lang="c2_li6">Ortodonti (Tel) Yok</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="teklif.html" class="btn btn-primary" data-lang="c2_btn">Tedaviye Başla</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3 data-lang="c3_title">VIP İmplant</h3>
+          <div class="price-box">
+            <span class="currency">₺</span><span class="amount">25000</span>
+            <span class="period" data-lang="c3_per">/başlangıç</span>
+          </div>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li data-lang="c3_li1">Ömür Boyu Garantili İmplant</li>
+            <li data-lang="c3_li2">Zirkonyum Kaplama</li>
+            <li data-lang="c3_li3">7/24 Acil Diş Hekimi</li>
+            <li data-lang="c3_li4">Ücretsiz Yıllık Kontrol</li>
+            <li data-lang="c3_li5">Ağız Duşu Hediyeli</li>
+            <li data-lang="c3_li6">Tüm Cerrahi İşlemler</li>
+          </ul>
+        </div>
+        <div class="card-footer">
+          <a href="teklif.html" class="btn" data-lang="c3_btn">İletişime Geç</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="back-link">
+      <a href="../index.html" class="btn-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        <span data-lang="back_home">Ana Sayfaya Dön</span>
+      </a>
+    </div>
+  </div>
+
+  <div id="iletisim" class="footer">
+    <div class="footer-content">
+      <div class="footer-box">
+        <img src="../photos/logo.png" alt="Q-Line Logo Küçük">
+        <h3 data-lang="footer_brand">Q-Line Özel Diş Polikliniği</h3>
+      </div>
+
+      <div class="footer-box">
+        <h4 data-lang="footer_contact_title">Bize Ulaşın</h4>
+        <p>
+          <strong data-lang="lbl_phone">Telefon:</strong> +90 (212) 555 00 00
+        </p>
+        <p>
+          <strong data-lang="lbl_email">E-Posta:</strong> info@qline-dis.com
+        </p>
+        <p>
+          <strong data-lang="lbl_addr">Adres:</strong>
+          <span data-lang="txt_addr">Teknoloji Cad. No:10 Manisa/Akhisar</span>
+        </p>
+      </div>
+
+      <div class="footer-box">
+        <h4 data-lang="footer_menu_title">Hızlı Menü</h4>
+        <a href="../index.html" data-lang="nav_home">Ana Sayfa</a>
+        <a href="team.html" data-lang="nav_team">Ekibimiz</a>
+        <a href="task2.html" data-lang="footer_nav_price">Fiyat Listesi</a>
+        <a href="teklif.html" data-lang="footer_nav_calc">Maliyet Hesapla</a>
+        <a href="kur.html" data-lang="nav_curr">Kur Çevirici</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p data-lang="footer_rights">&copy; 2026 Q-Line Diş Polikliniği. Tüm Hakları Saklıdır.</p>
+    </div>
+  </div>
+
+  <script src="../app.js"></script>
+  <script src="../lang.js"></script>
+</body>
+
+</html>
