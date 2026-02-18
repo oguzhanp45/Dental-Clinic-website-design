@@ -42,4 +42,4 @@ Bu proje, statik bir web sitesinin ötesine geçerek; kullanıcı tercihlerini h
 3.  API'nin çalışması için internet bağlantısı gereklidir.
 
 ---
-**Geliştirici:** [Adın Soyadın]
+**Geliştirici:** Oğuzhan Püsküllü
