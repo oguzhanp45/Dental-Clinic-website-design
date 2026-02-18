@@ -870,87 +870,71 @@ body.dark-mode .feature-item {
    ================================================================= */
 @media (max-width: 768px) {
     
-    /* 1. NAVBAR DÜZELTMESİ (ÜST MENÜ) */
+    /* 1. NAVBAR KUTUSU */
     .navbar {
-        flex-direction: column; /* Menüyü dikey yap */
+        flex-direction: column; /* Logo üstte, linkler altta olsun */
         height: auto;
-        padding: 20px 15px; /* Kenar boşlukları */
+        padding: 15px;
     }
 
     .logo-container {
-        margin-bottom: 20px; /* Logo ile menü arasını aç */
+        margin-bottom: 15px; /* Logo ile linkler arasına az boşluk */
     }
 
-    /* Menü Linkleri Kutusu */
+    /* 2. LİNKLERİN KUTUSU (YAN YANA VE KAYGAN) */
     .menu-links {
         display: flex;
-        flex-direction: column; /* Elemanları ALT ALTA diz */
-        align-items: center;    /* Ortala */
-        width: 100%;            /* Tam genişlik */
-        margin-top: 10px;
-        gap: 15px;              /* Elemanlar arası boşluk */
-    }
-
-    /* Linkler */
-    .menu-links a {
-        margin: 0; /* Eski yan margin'i sıfırla */
-        font-size: 1.1rem;
+        flex-direction: row;    /* Yan yana diz */
+        flex-wrap: wrap;        /* Sığmayan aşağı kaysın */
+        justify-content: center;/* Ortala */
+        gap: 10px;              /* Linkler arası boşluk */
         width: 100%;
-        text-align: center;
-        padding: 8px 0;
-        border-bottom: 1px solid var(--border-color); /* Ayırıcı çizgi */
+        margin-top: 5px;
     }
 
-    /* Son linkin çizgisini kaldır (Butonlardan önceki) */
-    .menu-links a:last-of-type {
-        border-bottom: none;
+    /* 3. LİNKLER (BUTTON GÖRÜNÜMÜ) */
+    .menu-links a {
+        margin: 0;
+        font-size: 0.9rem;      /* Yazıları biraz küçült sığsın */
+        padding: 8px 12px;      /* Buton gibi görünsün */
+        border: 1px solid var(--border-color); /* Çerçeve ekle */
+        border-radius: 20px;    /* Yuvarlat */
+        background-color: var(--bg-body); /* Arka plan rengi */
+        white-space: nowrap;    /* Yazı kırılmasın tek satır kalsın */
+    }
+    
+    /* Aktif sayfa linkini belli et */
+    .menu-links a.active {
+        background-color: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
     }
 
-    /* Dil Seçiciyi Ortala ve Boşluk Bırak */
+    /* 4. DİL VE TEMA BUTONLARI */
     .lang-switch-container {
-        margin: 10px 0 !important; /* Dikey boşluk */
-        width: auto;
-        transform: none;
+        margin: 5px 0 0 0 !important;
     }
 
-    /* Tema Butonunu Ortala */
     .theme-toggle-btn {
-        margin: 0 !important;
-        margin-bottom: 10px !important;
+        margin: 5px 0 0 5px !important;
+        width: 35px;
+        height: 35px;
     }
 
-    /* 2. DİĞER SAYFA DÜZELTMELERİ (Flip Cards, Formlar vb.) */
+    /* 5. DİĞER SAYFA DÜZELTMELERİ */
     .calculator-wrapper { padding: 0; }
-
-    .calculator-card {
-        border-radius: 10px;
-        margin: 10px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    }
-
-    .calc-body, .calc-header { padding: 20px; }
-
+    .calculator-card { margin: 10px; }
+    .calc-body, .calc-header { padding: 15px; }
     .checkbox-item { align-items: flex-start; }
     .checkbox-item input { margin-top: 3px; }
-
     .total-price { font-size: 1.8rem; }
-
-    .team-wrapper {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    .team-wrapper { flex-direction: column; align-items: center; }
     .flip-card-container { margin-bottom: 20px; }
-
-    .hero-overlay h1 { font-size: 2rem; }
+    .hero-overlay h1 { font-size: 1.8rem; }
     .row { flex-direction: column; }
     .footer-content { flex-direction: column; align-items: center; }
-
-    .cta-overlay {
-        flex-direction: column;
-        text-align: center;
-    }
-    .cta-text { margin-bottom: 30px; margin-right: 0; }
-    .cta-text h2 { font-size: 1.6rem; }
+    .cta-overlay { flex-direction: column; text-align: center; }
+    .cta-text { margin-bottom: 20px; margin-right: 0; }
+    .cta-text h2 { font-size: 1.5rem; }
     .btn-cta { width: 100%; justify-content: center; }
 }
