@@ -40,6 +40,7 @@ Bu proje, statik bir web sitesinin ötesine geçerek; kullanıcı tercihlerini h
 1.  Projeyi klonlayın veya ZIP olarak indirin.
 2.  `index.html` dosyasını tarayıcınızda açın.
 3.  API'nin çalışması için internet bağlantısı gereklidir.
+4.  https://oguzhanp45.github.io/Dental-Clinic-website-design/
 
 ---
 **Geliştirici:** Oğuzhan Püsküllü
